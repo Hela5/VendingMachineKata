@@ -6,6 +6,8 @@ import java.util.Set;
 
 public class ProductDAOImpl implements ProductDAO {
 
+    private HashMap<String, Product> productInfo = new HashMap<>();
+
 
     @Override
     public String getProductTypes() {
@@ -15,7 +17,9 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public double getProductCost(String productType) {
-        return 0;
+        Product chip = new Product();
+        chip.setProductCost(.50);
+        return chip.getProductCost();
     }
 
     @Override

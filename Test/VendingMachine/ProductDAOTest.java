@@ -1,5 +1,6 @@
 package VendingMachine;
 
+import main.com.VendingMachine.Product;
 import main.com.VendingMachine.ProductDAOImpl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,18 @@ public class ProductDAOTest {
         String chips = "chips";
         ProductDAOImpl chipTest = new ProductDAOImpl();
         assertEquals(chips, chipTest.getProductTypes());
+    }
+
+    @Test
+    public void canGetProductCost() {
+        String chips = "chips";
+        Product chp = new Product();
+        chp.setProductType(chips);
+        chp.setProductCost(.50);
+        ProductDAOImpl prodCostTest = new ProductDAOImpl();
+        assertEquals(chp.getProductCost(), prodCostTest.getProductCost(chips));
+
+
     }
 
 }
