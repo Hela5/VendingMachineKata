@@ -1,19 +1,27 @@
 package VendingMachine;
 
 import main.com.VendingMachine.Product;
+import main.com.VendingMachine.ProductDAO;
 import main.com.VendingMachine.ProductDAOImpl;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class ProductDAOTest {
     @Test
     public void canGetAProduct() {
-        String chips = "chips";
+        ArrayList<String> sampleList = new ArrayList<>();
+        sampleList.add("chips");
+        sampleList.add("cola");
+        sampleList.add("candy");
         ProductDAOImpl chipTest = new ProductDAOImpl();
-        assertEquals(chips, chipTest.getProductTypes());
+        assertArrayEquals(sampleList.toArray(), chipTest.getProductTypes().toArray());
     }
 
     @Test

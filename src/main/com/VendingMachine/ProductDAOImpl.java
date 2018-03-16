@@ -1,18 +1,21 @@
 package main.com.VendingMachine;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
 public class ProductDAOImpl implements ProductDAO {
 
-    private HashMap<String, Product> productInfo = new HashMap<>();
-
+    //private HashMap<String, Product> productInfo = new HashMap<>();
+    ArrayList<String> list = new ArrayList<>();
 
     @Override
-    public String getProductTypes() {
-        String chips = "chips";
-        return chips;
+    public ArrayList getProductTypes() {
+        list.add("chips");
+        list.add("cola");
+        list.add("candy");
+        return list;
     }
 
     @Override
@@ -22,8 +25,4 @@ public class ProductDAOImpl implements ProductDAO {
         return chip.getProductCost();
     }
 
-    @Override
-    public double getTotalCost(String productType) {
-        return 0;
-    }
 }

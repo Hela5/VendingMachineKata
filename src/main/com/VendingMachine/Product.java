@@ -22,11 +22,4 @@ public class Product {
         this.productCost = productCost;
     }
 
-    public double getTotalCost() {
-        return totalCost;
-    }
-
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
-    }
 }
