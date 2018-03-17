@@ -5,9 +5,6 @@ import main.com.VendingMachine.ProductDAO;
 import main.com.VendingMachine.ProductDAOImpl;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,24 +13,28 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ProductDAOImplTest {
     @Test
     public void canGetAProduct() {
-        ArrayList<String> sampleList = new ArrayList<>();
-        sampleList.add("chips");
-        sampleList.add("cola");
-        sampleList.add("candy");
+        Product[] testProduct;
+        testProduct = Product.values();
         ProductDAOImpl chipTest = new ProductDAOImpl();
-        assertArrayEquals(sampleList.toArray(), chipTest.getProductTypes().toArray());
+        assertArrayEquals(testProduct, chipTest.getProductTypes());
     }
 
     @Test
     public void canGetProductCost() {
-        String chips = "chips";
-        Product chp = new Product();
-        chp.setProductType(chips);
-        chp.setProductCost(.50);
+        Product chp = Product.CHIPS;
         ProductDAOImpl prodCostTest = new ProductDAOImpl();
-        assertEquals(chp.getProductCost(), prodCostTest.getProductCost(chips));
+        double chipsCost = .50;
+        assertEquals(chipsCost, prodCostTest.getProductCost(chp));
 
 
+    }
+
+    @Test
+    public void canGetInventory(){
+        Product candy = Product.CANDY;
+        ProductDAOImpl candyInvTest = new ProductDAOImpl();
+        int candyCount = 10;
+        assertEquals(candyCount, candyInvTest.getProductInventory(candy));
     }
 
 }

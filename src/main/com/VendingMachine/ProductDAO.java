@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public interface ProductDAO {
 
-    ArrayList getProductTypes();
-    double getProductCost(String productType);
+    Product[] getProductTypes();
+    double getProductCost(Product productType);
+    int getProductInventory(Product productType);
 
 }

@@ -1,28 +1,54 @@
 package main.com.VendingMachine;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
 
 public class ProductDAOImpl implements ProductDAO {
 
-    //private HashMap<String, Product> productInfo = new HashMap<>();
-    ArrayList<String> list = new ArrayList<>();
 
     @Override
-    public ArrayList getProductTypes() {
-        list.add("chips");
-        list.add("cola");
-        list.add("candy");
-        return list;
+    public Product[] getProductTypes() {
+        return Product.values();
     }
 
     @Override
-    public double getProductCost(String productType) {
-        Product chip = new Product();
-        chip.setProductCost(.50);
-        return chip.getProductCost();
+    public double getProductCost(Product productType) {
+        double productCost;
+        switch (productType){
+            case CANDY:
+                productCost = .65;
+                break;
+            case COLA:
+                productCost = 1.00;
+                break;
+            case CHIPS:
+                productCost = .50;
+                break;
+            default:
+                productCost = 0;
+                break;
+        }
+        return productCost;
+    }
+
+    @Override
+    public int getProductInventory(Product productType) {
+        int currentInventory;
+        //int newInventory;
+        switch (productType){
+            case CHIPS:
+                currentInventory = 10;
+                break;
+            case COLA:
+                currentInventory = 10;
+                break;
+            case CANDY:
+                currentInventory = 10;
+                break;
+                default:
+                    currentInventory = 0;
+                    break;
+        }
+        return currentInventory;
+
     }
 
 }
