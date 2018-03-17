@@ -6,7 +6,7 @@ public enum Coin {
 
    private double coinValue;
 
-    public double getCoinValue() {
+    public double getCoinValue(Coin coinType) {
         return coinValue;
     }
 

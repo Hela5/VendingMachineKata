@@ -4,7 +4,6 @@ import main.com.VendingMachine.Coin;
 import java.util.ArrayList;
 
 public class CoinDAOImpl implements CoinDAO {
-    Coin coinInUse;
 
     @Override
     public Coin[] getCoinTypes() {
@@ -12,16 +11,22 @@ public class CoinDAOImpl implements CoinDAO {
     }
 
     @Override
-    public double getCoinValue() {
-        switch (coinInUse){
+    public double getCoinValue(Coin coinType) {
+        double coinValue;
+        switch (coinType){
             case DIME:
-                return .5;
+                coinValue = .5;
+                break;
             case NICKEL:
-                return .10;
+                coinValue = .10;
+                break;
             case QUARTER:
-                return .25;
+                coinValue = .25;
+                break;
+            default:
+                coinValue = 0;
         }
-        return 0;
+        return coinValue;
     }
 }
 

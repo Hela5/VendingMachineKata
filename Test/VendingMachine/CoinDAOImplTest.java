@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static sun.misc.Version.print;
 
 public class CoinDAOImplTest {
 
@@ -16,5 +17,14 @@ public class CoinDAOImplTest {
         testCoin = Coin.values();
         CoinDAOImpl testList = new CoinDAOImpl();
         assertArrayEquals(testCoin, testList.getCoinTypes());
+    }
+
+    @Test
+    public void getDimeValue() {
+        Coin dime = Coin.DIME;
+        CoinDAOImpl dimeTest = new CoinDAOImpl();
+        double dimeValue = .50;
+        assertEquals(dimeValue, dimeTest.getCoinValue(dime));
+
     }
 }

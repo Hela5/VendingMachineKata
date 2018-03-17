@@ -6,6 +6,6 @@ public interface CoinDAO {
 
 
     Coin[] getCoinTypes();
-    double getCoinValue();
+    double getCoinValue(Coin coinType);
 
 }
