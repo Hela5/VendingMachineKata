@@ -4,7 +4,7 @@ public class Product {
 
     private String productType;
     private double productCost;
-    private double totalCost;
+    //private double totalCost;
 
     public String getProductType() {
         return productType;
