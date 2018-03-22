@@ -3,10 +3,8 @@ package main.com.VendingMachine;
 public class Controller {
 
     ConsoleIO cons = new ConsoleIO();
-    Order order = new Order();
-    boolean keepRunning = true;
-    OrderDAOImpl orderD = new OrderDAOImpl();
-    ProductDAOImpl prodD = new ProductDAOImpl();
+        boolean keepRunning = true;
+        ProductDAOImpl prodD = new ProductDAOImpl();
     CoinDAOImpl coinD = new CoinDAOImpl();
 
     double cost;
@@ -19,7 +17,7 @@ public class Controller {
 
         do {
             displaymenu();
-            int userChoice = cons.queryUserInt("Please choose from the listed options: ");
+            int userChoice = cons.queryUserIntRange("Please choose from the listed options: ", 1, 3);
             switch (userChoice) {
                 case 1:
                     cons.displayUserString("\n ___ Today's Selections are: _____");
@@ -31,7 +29,7 @@ public class Controller {
                     cons.displayUserString("\n ------ We accept these methods of payment ------ \n");
                     methodsOfPayment();
                     selectPaymentMethod();
-                    cons.displayUserString("Thanks for shopping with us today!");
+                    cons.displayUserString("Thanks for shopping with us today! We hope you enjoy your selections! ");
                     break;
                 case 3:
                     cons.displayUserString("Thanks for stopping by! ");
@@ -142,7 +140,7 @@ public class Controller {
 
             indivInput = coinD.getCoinValue(coinRealName);
 
-            int numOfCoinType = cons.queryUserInt("How many would you like to put in?");
+            int numOfCoinType = cons.queryUserIntRange("How many would you like to put in?", 1, 25);
             totalInput = (indivInput * numOfCoinType) + totalInput;
             cons.displayUserString("We have " + numOfCoinType + " of  " + coinRealName + " ... a total of $" + totalInput);
             cons.displayUserString("Your total cost is $" + totalCost);
@@ -154,6 +152,8 @@ public class Controller {
                 cons.displayUserString("Great! We can make you change now. ");
                 needMoreChange = false;
                 makeChange();
+                totalCost = 0;
+                totalInput = 0;
             } else if (totalCost == totalInput) {
                 needMoreChange = false;
                 totalCost = 0;

@@ -4,7 +4,7 @@ public enum Coin {
 
     QUARTER, DIME, NICKEL;
 
-   private double coinValue;
+    private double coinValue;
 
     public double getCoinValue(Coin coinType) {
         return coinValue;

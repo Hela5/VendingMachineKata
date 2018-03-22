@@ -23,7 +23,7 @@ public class CoinDAOImplTest {
     public void getDimeValue() {
         Coin dime = Coin.DIME;
         CoinDAOImpl dimeTest = new CoinDAOImpl();
-        double dimeValue = .50;
+        double dimeValue = .1;
         assertEquals(dimeValue, dimeTest.getCoinValue(dime));
 
     }
