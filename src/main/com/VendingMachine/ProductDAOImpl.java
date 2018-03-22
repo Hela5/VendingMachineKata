@@ -11,6 +11,8 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public double getProductCost(Product productType) {
+/*        double pCost = Product.valueOf(productType);
+        return pCost;*/
         double productCost;
         switch (productType){
             case CANDY:

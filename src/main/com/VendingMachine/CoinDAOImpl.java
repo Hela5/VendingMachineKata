@@ -15,10 +15,10 @@ public class CoinDAOImpl implements CoinDAO {
         double coinValue;
         switch (coinType){
             case DIME:
-                coinValue = .5;
+                coinValue = .10;
                 break;
             case NICKEL:
-                coinValue = .10;
+                coinValue = .05;
                 break;
             case QUARTER:
                 coinValue = .25;

@@ -2,21 +2,19 @@ package main.com.VendingMachine;
 
 public enum Product {
 
-    CHIPS, COLA, CANDY;
+    CHIPS,
+    COLA,
+    CANDY;
 
    // private String productType;
-    private double productCost;
+
     private int productInventory;
 
-/*
-    public String getProductTypes() {
-        return productType;
-    }
+    private double productCost;
+/*    Product(double productCost){
+        this.productCost = productCost;
+    }*/
 
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
-*/
 
     public double getProductCost() {
         return productCost;
