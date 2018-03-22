@@ -14,7 +14,7 @@ public class ConsoleIO {
     public int queryUserIntRange(String queryMessage, int inputMin, int inputMax){
         System.out.println(queryMessage);
         int response = sc.nextInt();
-        while (response < inputMin && response > inputMax) {
+        if (response < inputMin && response > inputMax) {
             System.out.println("Looks like you are out of range, try again!");
             System.out.println("Please stay within " + inputMin + " and " + inputMax + ".");
             System.out.println(queryMessage);
