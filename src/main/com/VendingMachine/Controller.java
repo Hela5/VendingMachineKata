@@ -23,8 +23,9 @@ public class Controller {
 
             switch (userChoice) {
                 case 1:
-                    cons.displayUserString("\n ___ Today's Selections are: _____");
+                    cons.displayUserString("\n ___ Today's Selections are: _____\n");
                     displayAllProducts();
+                    cons.displayUserString("\n ___ Returning to the Main Menu ___ ");
                     break;
                 case 2:
                     displayProductAvailability();
@@ -93,10 +94,8 @@ public class Controller {
 
     private void displayAllProducts() {
         Product[] prodsAvail = prodD.getProductTypes();
-        int num;
         for (Product currentProd : prodsAvail) {
-            num = currentProd.ordinal() + 1;
-            cons.displayUserString(num + " " + currentProd.toString() + " --  COST : $ " + prodD.getProductCost(currentProd));
+            cons.displayUserString( "\t" + currentProd.toString() + " --  COST : $ " + prodD.getProductCost(currentProd));
         }
     }
 
@@ -104,9 +103,9 @@ public class Controller {
         Product[] prods = prodD.getProductTypes();
         for (Product currentProd : prods) {
             if (prodD.getProductInventory(currentProd) > 0) {
-                cons.displayUserString(currentProd.toString() + "   is available");
+                cons.displayUserString("\t" + currentProd.toString() + "   is available");
             } else if (prodD.getProductInventory(currentProd) <= 0) {
-                cons.displayUserString(currentProd.toString() + "is currently unavailable. Sorry!");
+                cons.displayUserString("\t" + currentProd.toString() + "is currently unavailable. Sorry!");
             }
         }
     }
@@ -114,19 +113,20 @@ public class Controller {
     private void methodsOfPayment() {
         Coin[] coins = coinD.getCoinTypes();
         for (Coin currentCoin : coins) {
-            cons.displayUserString(currentCoin.toString());
+            cons.displayUserString("\t" + currentCoin.toString());
         }
     }
 
     public void selectPaymentMethod() {
         boolean needMoreChange = false;
-        boolean validCoin;
+        boolean validCoin = false;
         String coinType;
         Coin coinRealName = null;
         String returnCoins;
 
-        do {
+        cons.displayUserString("If at any time you want your coins returned. Please say RETURN.");
 
+        do {
            do {
                coinType = cons.queryUserString("\nWhich coin would you like to start adding in?");
                if (coinType.equalsIgnoreCase("QUARTER")) {
@@ -138,7 +138,13 @@ public class Controller {
                } else if (coinType.equalsIgnoreCase("NICKEL")) {
                    coinRealName = Coin.NICKEL;
                    validCoin = true;
-               } else {
+               } else if(coinType.equalsIgnoreCase("RETURN")){
+                   cons.displayUserString("We are sorry to hear that. All coins will be returned. ");
+                   //cons.displayUserString("You'll be refunded: " + numOfCoinType + "  " + coinRealName + "'s");
+                   indivInput = 0;
+                   break;
+               }
+               else  {
                    validCoin = false;
                }
                if(!validCoin) {
@@ -152,24 +158,16 @@ public class Controller {
 
             int numOfCoinType = cons.queryUserInt("How many coins would you like to put in?");
             if (acceptableRangeForCoins(numOfCoinType)) {
+                cons.displayUserString("We are returning your coins.");
                 numOfCoinType = 0;
             }
             totalInput = (indivInput * numOfCoinType) + totalInput;
-            returnCoins = cons.queryUserString("\nIf you'd like to cancel and refund the inputted change. Please type 'Return'");
-            if (returnCoins.equalsIgnoreCase("RETURN")){
-                cons.displayUserString("We are sorry to hear that. We will contact management shortly.");
-                cons.displayUserString("You'll be refunded: " + numOfCoinType + "  " + coinRealName + "'s");
-                indivInput = 0;
-                break;
-            } else{
-                cons.displayUserString("Great, let's continue with your order.");
-            }
 
             cons.displayUserString("We have " + numOfCoinType + " of  " + coinRealName + " ... a total of $" + totalInput);
             cons.displayUserString("Your total cost is $" + totalCost);
 
             if (totalInput < totalCost) {
-                cons.displayUserString("Uhoh! We need more change!");
+                cons.displayUserString("We need more change!");
                 needMoreChange = true;
             } else if (totalInput > totalCost) {
                 cons.displayUserString("Great! We can make you change now. ");
@@ -199,6 +197,8 @@ public class Controller {
             } else if (remainder % 5 == 0) {
                 changeBack = remainder / 5;
                 cons.displayUserString("You get " + changeBack + " Dimes back");
+            } else {
+                cons.displayUserString("You get " + remainder/100 + " back");
             }
         }
 
