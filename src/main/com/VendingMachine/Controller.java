@@ -1,11 +1,14 @@
 package main.com.VendingMachine;
 
+import java.text.DecimalFormat;
+
 public class Controller {
 
     ConsoleIO cons = new ConsoleIO();
-        boolean keepRunning = true;
-        ProductDAOImpl prodD = new ProductDAOImpl();
+    boolean keepRunning = true;
+    ProductDAOImpl prodD = new ProductDAOImpl();
     CoinDAOImpl coinD = new CoinDAOImpl();
+    DecimalFormat df = new DecimalFormat("#.00");
 
     double cost;
     double totalCost;
@@ -14,18 +17,18 @@ public class Controller {
     double totalInput;
 
     public void run() {
+        displaymenu();
 
         do {
-            displaymenu();
             int userChoice;
             try {
-                userChoice = cons.queryUserIntRange("Please type the number that best suits you from the options listed above: ", 1, 3);
+                userChoice = cons.queryUserIntRange("Please type the number that best suits you from the Main Menu: ", 1, 3);
 
             switch (userChoice) {
                 case 1:
                     cons.displayUserString("\n ___ Today's Selections are: _____\n");
                     displayAllProducts();
-                    cons.displayUserString("\n ___ Returning to the Main Menu ___ ");
+                    cons.displayUserString("\n _________________________________ \n ");
                     break;
                 case 2:
                     displayProductAvailability();
@@ -55,6 +58,8 @@ public class Controller {
         cons.displayUserString("\n**********************************");
         cons.displayUserString("*         Welcome to the         *");
         cons.displayUserString("*        Vending Machine!        *");
+        cons.displayUserString("*                                *");
+        cons.displayUserString("*        -- Main Menu --         *");
         cons.displayUserString("*                                *");
         cons.displayUserString("*       Would you like to:       *");
         cons.displayUserString("*    1. View Product List        *");
@@ -115,16 +120,17 @@ public class Controller {
         for (Coin currentCoin : coins) {
             cons.displayUserString("\t" + currentCoin.toString());
         }
+        cons.displayUserString("\n  ");
     }
 
     public void selectPaymentMethod() {
         boolean needMoreChange = false;
-        boolean validCoin = false;
+        boolean validCoin;
         String coinType;
         Coin coinRealName = null;
         String returnCoins;
 
-        cons.displayUserString("If at any time you want your coins returned. Please say RETURN.");
+        cons.displayUserString("If you want your coins returned. Please say RETURN.");
 
         do {
            do {
@@ -139,8 +145,7 @@ public class Controller {
                    coinRealName = Coin.NICKEL;
                    validCoin = true;
                } else if(coinType.equalsIgnoreCase("RETURN")){
-                   cons.displayUserString("We are sorry to hear that. All coins will be returned. ");
-                   //cons.displayUserString("You'll be refunded: " + numOfCoinType + "  " + coinRealName + "'s");
+                   cons.displayUserString("We are sorry to hear that. All coins are being returned. ");
                    indivInput = 0;
                    break;
                }
@@ -148,7 +153,7 @@ public class Controller {
                    validCoin = false;
                }
                if(!validCoin) {
-                   cons.displayUserString("Sorry, we can't accept those. Please try again!");
+                   cons.displayUserString("Sorry, we can't accept that. Please try again!");
                    validCoin = false;
                }
 
@@ -163,14 +168,14 @@ public class Controller {
             }
             totalInput = (indivInput * numOfCoinType) + totalInput;
 
-            cons.displayUserString("We have " + numOfCoinType + " of  " + coinRealName + " ... a total of $" + totalInput);
+            cons.displayUserString("You inserted " + numOfCoinType + "  " + coinRealName + "S ... a total of $" + df.format(totalInput));
             cons.displayUserString("Your total cost is $" + totalCost);
 
             if (totalInput < totalCost) {
                 cons.displayUserString("We need more change!");
                 needMoreChange = true;
             } else if (totalInput > totalCost) {
-                cons.displayUserString("Great! We can make you change now. ");
+                cons.displayUserString("Great! Generating your change. ");
                 needMoreChange = false;
                 makeChange();
                 totalCost = 0;
@@ -187,20 +192,16 @@ public class Controller {
         public void makeChange(){
             double remainder = totalInput - totalCost;
             remainder = remainder * 100;
-            double changeBack;
-            if (remainder % 25 == 0) {
-                changeBack = remainder / 25;
-                cons.displayUserString("You get " + changeBack + " Quarters back ");
-            } else if (remainder % 10 == 0) {
-                changeBack = remainder / 10;
-                cons.displayUserString("You get " + changeBack + " Dimes back");
-            } else if (remainder % 5 == 0) {
-                changeBack = remainder / 5;
-                cons.displayUserString("You get " + changeBack + " Dimes back");
-            } else {
-                cons.displayUserString("You get " + remainder/100 + " back");
-            }
-        }
+                cons.displayUserString("You get $" + df.format(remainder / 100));
+                double numQuarters = remainder / 25;
+
+                remainder = remainder % 25;
+                double numDimes = remainder / 10;
+                remainder = remainder % 10;
+                double numNickels = remainder / 5;
+                DecimalFormat intStyle = new DecimalFormat("#0");
+                cons.displayUserString( intStyle.format(numQuarters) + " Quarters back\n" + intStyle.format(numDimes) + " Dimes back \n" + intStyle.format(numNickels) + " Nickels back");
+    }
 
         public boolean acceptableRangeForCoins(int coinsIn){
         boolean tooMany = false;
