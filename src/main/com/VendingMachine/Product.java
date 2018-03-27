@@ -2,34 +2,28 @@ package main.com.VendingMachine;
 
 public enum Product {
 
-    CHIPS,
-    COLA,
-    CANDY;
+    CHIPS(.50),
+    COLA(1.00),
+    CANDY(.65);
 
-   // private String productType;
-
-    private int productInventory;
+    private int productInventory = 10;
 
     private double productCost;
-/*    Product(double productCost){
+    Product(double productCost){
         this.productCost = productCost;
-    }*/
+    }
 
 
     public double getProductCost() {
         return productCost;
     }
 
-    public void setProductCost(double productCost) {
-        this.productCost = productCost;
-    }
-
     public int getProductInventory() {
         return productInventory;
     }
 
-    public void setProductInventory(int productInventory){
-        this.productInventory = productInventory;
+    public void setProductInventory(int prodInvt){
+        this.productInventory = prodInvt;
     }
 
 }

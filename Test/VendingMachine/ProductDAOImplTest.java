@@ -21,20 +21,26 @@ public class ProductDAOImplTest {
 
     @Test
     public void canGetProductCost() {
-        Product chp = Product.CHIPS;
-        ProductDAOImpl prodCostTest = new ProductDAOImpl();
+        double chp = Product.CHIPS.getProductCost();
         double chipsCost = .50;
-        assertEquals(chipsCost, prodCostTest.getProductCost(chp));
+        assertEquals(chipsCost, chp);
 
 
     }
 
     @Test
     public void canGetInventory(){
-        Product candy = Product.CANDY;
-        ProductDAOImpl candyInvTest = new ProductDAOImpl();
+        int candy = Product.CANDY.getProductInventory();
         int candyCount = 10;
-        assertEquals(candyCount, candyInvTest.getProductInventory(candy));
+        assertEquals(candyCount,candy);
+    }
+
+    @Test
+    public void setInventory(){
+        Product.COLA.setProductInventory(7);
+        int diff = Product.COLA.getProductInventory();
+        int newColaInv = 7;
+        assertEquals(newColaInv, diff);
     }
 
 }

@@ -16,6 +16,10 @@ public class Controller {
     double indivInput;
     double totalInput;
 
+    Product prodType;
+    int numProdPurchased;
+    int resetInv;
+
     public void run() {
         displaymenu();
 
@@ -71,28 +75,45 @@ public class Controller {
     }
 
     private void purchaseAProduct() {
+        boolean suffProd;
         boolean onceAgain = true;
-        do {
+         do {
             String resp = cons.queryUserString("\nPlease type your selected product!  ");
-            if (resp.equalsIgnoreCase("CHIPS")) {
-                cost = prodD.getProductCost(Product.CHIPS);
-                totalCost = cost + totalCost;
-            } else if (resp.equalsIgnoreCase("COLA")) {
-                cost = prodD.getProductCost(Product.COLA);
-                totalCost = cost + totalCost;
-            } else if (resp.equalsIgnoreCase("CANDY")) {
-                cost = prodD.getProductCost(Product.CANDY);
-                totalCost = cost + totalCost;
-            } else {
-                cons.displayUserString("I'm sorry, that seems to be an invalid option. Please try and type it again.");
+            //resp.toUpperCase();
+            switch (resp.toUpperCase()) {
+                case "CHIPS":
+                    prodType = Product.CHIPS;
+                    cost = prodType.getProductCost();
+                    totalCost = cost + totalCost;
+                    numProdPurchased++;
+                    break;
+                case "COLA":
+                    prodType = Product.COLA;
+                    cost = prodType.getProductCost();
+                    totalCost = cost + totalCost;
+                    numProdPurchased++;
+                    break;
+                case "CANDY":
+                    prodType = Product.CANDY;
+                    cost = prodType.getProductCost();
+                    totalCost = cost + totalCost;
+                    numProdPurchased++;
+                    break;
+                default:
+                    cons.displayUserString("I'm sorry, that seems to be an invalid option. Please try and type it again.");
             }
-
-            cons.displayUserString("Your current total is: " + "$ " + totalCost);
+            suffProd = checkProdInventory(prodType);
+            if (suffProd) {
+            cons.displayUserString("Your current total is: " + "$ " + totalCost + "\nTotal Items To Purchase " + numProdPurchased);
             String keepGoing = cons.queryUserString("Would you like anything else today? Y or N ");
             if (keepGoing.equalsIgnoreCase("Y")) {
                 onceAgain = true;
             } else if (keepGoing.equalsIgnoreCase("N")) {
                 onceAgain = false;
+            }}
+            else {
+                cons.displayUserString("Product selected is SOLD OUT. Please select something else today.");
+                onceAgain = true;
             }
         } while (onceAgain);
     }
@@ -100,16 +121,16 @@ public class Controller {
     private void displayAllProducts() {
         Product[] prodsAvail = prodD.getProductTypes();
         for (Product currentProd : prodsAvail) {
-            cons.displayUserString( "\t" + currentProd.toString() + " --  COST : $ " + prodD.getProductCost(currentProd));
+            cons.displayUserString( "\t" + currentProd.toString() + " --  COST : $ " + currentProd.getProductCost());
         }
     }
 
     private void displayProductAvailability() {
         Product[] prods = prodD.getProductTypes();
         for (Product currentProd : prods) {
-            if (prodD.getProductInventory(currentProd) > 0) {
+            if (currentProd.getProductInventory() > 0) {
                 cons.displayUserString("\t" + currentProd.toString() + "   is available");
-            } else if (prodD.getProductInventory(currentProd) <= 0) {
+            } else if (currentProd.getProductInventory() <= 0) {
                 cons.displayUserString("\t" + currentProd.toString() + "is currently unavailable. Sorry!");
             }
         }
@@ -128,30 +149,34 @@ public class Controller {
         boolean validCoin;
         String coinType;
         Coin coinRealName = null;
-        String returnCoins;
 
         cons.displayUserString("If you want your coins returned. Please say RETURN.");
 
         do {
            do {
                coinType = cons.queryUserString("\nWhich coin would you like to start adding in?");
-               if (coinType.equalsIgnoreCase("QUARTER")) {
-                   coinRealName = Coin.QUARTER;
-                   validCoin = true;
-               } else if (coinType.equalsIgnoreCase("DIME")) {
-                   coinRealName = Coin.DIME;
-                   validCoin = true;
-               } else if (coinType.equalsIgnoreCase("NICKEL")) {
-                   coinRealName = Coin.NICKEL;
-                   validCoin = true;
-               } else if(coinType.equalsIgnoreCase("RETURN")){
-                   cons.displayUserString("We are sorry to hear that. All coins are being returned. ");
-                   indivInput = 0;
-                   break;
+               switch (coinType.toUpperCase()) {
+                   case "QUARTER":
+                       coinRealName = Coin.QUARTER;
+                       validCoin = true;
+                       break;
+                   case "DIME":
+                       coinRealName = Coin.DIME;
+                       validCoin = true;
+                       break;
+                   case "NICKEL":
+                       coinRealName = Coin.NICKEL;
+                       validCoin = true;
+                       break;
+                   case "RETURN":
+                       cons.displayUserString("We are sorry to hear that. All coins are being returned. ");
+                       indivInput = 0;
+                       validCoin = false;
+                       break;
+                   default:
+                       validCoin = false;
                }
-               else  {
-                   validCoin = false;
-               }
+
                if(!validCoin) {
                    cons.displayUserString("Sorry, we can't accept that. Please try again!");
                    validCoin = false;
@@ -159,17 +184,23 @@ public class Controller {
 
            } while (!validCoin);
 
-            indivInput = coinD.getCoinValue(coinRealName);
+            indivInput = coinRealName.getCoinValue();
 
             int numOfCoinType = cons.queryUserInt("How many coins would you like to put in?");
             if (acceptableRangeForCoins(numOfCoinType)) {
                 cons.displayUserString("We are returning your coins.");
                 numOfCoinType = 0;
             }
-            totalInput = (indivInput * numOfCoinType) + totalInput;
+            boolean suffCoin;
+            if (numOfCoinType > 0) {
+                suffCoin = checkCoinInventory(coinRealName);
+            }
+            if (suffCoin) {
+            double thisInput = indivInput * numOfCoinType;
+            totalInput = thisInput + totalInput;
 
-            cons.displayUserString("You inserted " + numOfCoinType + "  " + coinRealName + "S ... a total of $" + df.format(totalInput));
-            cons.displayUserString("Your total cost is $" + totalCost);
+            cons.displayUserString("You inserted " + numOfCoinType + "  " + coinRealName + "S ... a total of : $" + df.format(thisInput));
+            cons.displayUserString("Input total is : $" + df.format(totalInput) + "\nYour total cost is : $" + df.format(totalCost));
 
             if (totalInput < totalCost) {
                 cons.displayUserString("We need more change!");
@@ -184,7 +215,11 @@ public class Controller {
                 needMoreChange = false;
                 totalCost = 0;
                 totalInput = 0;
+            }} else {
+                cons.displayUserString("EXACT CHANGE ONLY");
+                needMoreChange = true;
             }
+
         }
         while (needMoreChange) ;
     }
@@ -206,10 +241,34 @@ public class Controller {
         public boolean acceptableRangeForCoins(int coinsIn){
         boolean tooMany = false;
         if (coinsIn < 1 || coinsIn > 10){
-            cons.displayUserString("We can't make that much change. Please lower your input to less than 10.");
+            cons.displayUserString("Please lower your input to less than 10.");
             tooMany = true;
         }
         return tooMany;
+        }
+
+        public boolean checkProdInventory(Product prodT) {
+            boolean sufficientProd = true;
+            int initialInv = prodT.getProductInventory();
+            if (initialInv <= 0) {
+                sufficientProd = false;
+        }
+             resetInv = initialInv - 1;
+             prodT.setProductInventory(resetInv);
+             cons.displayUserString("Reset Inventory : " + prodT.getProductInventory());
+             return sufficientProd;
+        }
+
+        public boolean checkCoinInventory(Coin coinT){
+          boolean sufficientCoin = true;
+          int initialCoins = coinT.getCoinInventory();
+          if(initialCoins <= 4){
+              sufficientCoin = false;
+          }
+          resetInv = initialCoins - 1;
+          coinT.setCoinInventory(resetInv);
+          cons.displayUserString("ResetInventory : " +coinT.getCoinInventory());
+          return sufficientCoin;
         }
 
     }

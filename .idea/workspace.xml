@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69107a24-3edd-4a19-b6f1-c0fd0348f812" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java" afterPath="$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java" />
+      <change beforePath="$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java" afterPath="$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/Product.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/Product.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java" />
       <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,38 +27,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinDAOImplTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Coin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="387">
+              <caret line="193" column="29" lean-forward="true" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -60,8 +37,82 @@
       <file leaf-file-name="ProductDAOImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
-              <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+              <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+              <folding>
+                <element signature="e#141#142#0" expanded="true" />
+                <element signature="e#180#181#0" expanded="true" />
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#349#350#0" expanded="true" />
+                <element signature="e#408#409#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#240#241#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+                <element signature="e#381#382#0" expanded="true" />
+                <element signature="e#429#430#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="e#209#210#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
+                <element signature="e#507#508#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -70,8 +121,25 @@
       <file leaf-file-name="CoinDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="546">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#280#281#0" expanded="true" />
+                <element signature="e#322#323#0" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinDAOImplTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -85,19 +153,6 @@
               <folding>
                 <element signature="e#988#989#0" expanded="true" />
                 <element signature="e#1035#1036#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-              <folding>
-                <element signature="e#142#143#0" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,25 +188,26 @@
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/Factory.java" />
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/App.java" />
-        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java" />
-        <option value="$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/Product.java" />
         <option value="$PROJECT_DIR$/Test/VendingMachine/OrderDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/OrderDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/ConsoleIO.java" />
+        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/Product.java" />
+        <option value="$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java" />
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java" />
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java" />
         <option value="$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/ConsoleIO.java" />
-        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -283,7 +339,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="CoinDAOImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoinDAOImplTest.getCoinInv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="VendingMachine.*" />
@@ -295,32 +351,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="VendingMachine" />
       <option name="MAIN_CLASS_NAME" value="VendingMachine.CoinDAOImplTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="CoinDAOImplTest.getDimeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="VendingMachine.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="VendingMachineKata" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="VendingMachine" />
-      <option name="MAIN_CLASS_NAME" value="VendingMachine.CoinDAOImplTest" />
-      <option name="METHOD_NAME" value="getDimeValue" />
+      <option name="METHOD_NAME" value="getCoinInv" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -333,7 +364,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="OrderDAOImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoinDAOImplTest.setCoinInv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="VendingMachine.*" />
@@ -344,9 +375,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="VendingMachine" />
-      <option name="MAIN_CLASS_NAME" value="VendingMachine.OrderDAOImplTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="VendingMachine.CoinDAOImplTest" />
+      <option name="METHOD_NAME" value="setCoinInv" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -358,7 +389,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="OrderDAOImplTest.canAddOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductDAOImplTest.canGetInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="VendingMachine.*" />
@@ -369,8 +400,33 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="VendingMachine" />
-      <option name="MAIN_CLASS_NAME" value="VendingMachine.OrderDAOImplTest" />
-      <option name="METHOD_NAME" value="canAddOrder" />
+      <option name="MAIN_CLASS_NAME" value="VendingMachine.ProductDAOImplTest" />
+      <option name="METHOD_NAME" value="canGetInventory" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ProductDAOImplTest.setInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="VendingMachine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="VendingMachineKata" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="VendingMachine" />
+      <option name="MAIN_CLASS_NAME" value="VendingMachine.ProductDAOImplTest" />
+      <option name="METHOD_NAME" value="setInventory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -444,19 +500,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.OrderDAOImplTest.canAddOrder" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.OrderDAOImplTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.App" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest.getDimeValue" />
+      <item index="0" class="java.lang.String" itemvalue="Application.App" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ProductDAOImplTest.canGetInventory" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ProductDAOImplTest.setInventory" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest.getCoinInv" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest.setCoinInv" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.App" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest.getDimeValue" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.OrderDAOImplTest.canAddOrder" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.OrderDAOImplTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest.setCoinInv" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CoinDAOImplTest.getCoinInv" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductDAOImplTest.setInventory" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProductDAOImplTest.canGetInventory" />
       </list>
     </recent_temporary>
   </component>
@@ -477,35 +533,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CoinDAOImplTest - 2018.03.21 at 22h 05m 39s.xml">
+    <history-entry file="CoinDAOImplTest - 2018.03.27 at 15h 06m 08s.xml">
       <configuration name="CoinDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CoinDAOImplTest_getDimeValue - 2018.03.21 at 22h 06m 06s.xml">
+    <history-entry file="CoinDAOImplTest_getCoinInv - 2018.03.27 at 16h 18m 12s.xml">
+      <configuration name="CoinDAOImplTest.getCoinInv" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoinDAOImplTest_getDimeValue - 2018.03.27 at 15h 05m 59s.xml">
       <configuration name="CoinDAOImplTest.getDimeValue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CoinDAOImplTest_getDimeValue - 2018.03.21 at 22h 06m 37s.xml">
-      <configuration name="CoinDAOImplTest.getDimeValue" configurationId="JUnit" />
+    <history-entry file="CoinDAOImplTest_setCoinInv - 2018.03.27 at 16h 19m 52s.xml">
+      <configuration name="CoinDAOImplTest.setCoinInv" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderDAOImplTest_canAddOrder - 2018.03.20 at 16h 32m 44s.xml">
-      <configuration name="OrderDAOImplTest.canAddOrder" configurationId="JUnit" />
+    <history-entry file="CoinDAOImplTest_setCoinInv - 2018.03.27 at 16h 29m 39s.xml">
+      <configuration name="CoinDAOImplTest.setCoinInv" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderDAOImplTest_canGetOrder - 2018.03.19 at 14h 20m 43s.xml">
-      <configuration name="OrderDAOImplTest.canGetOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderDAOImplTest_canGetOrder - 2018.03.19 at 14h 20m 49s.xml">
-      <configuration name="OrderDAOImplTest.canGetOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductDAOImplTest - 2018.03.17 at 19h 34m 59s.xml">
+    <history-entry file="ProductDAOImplTest - 2018.03.27 at 14h 48m 07s.xml">
       <configuration name="ProductDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductDAOImplTest - 2018.03.20 at 15h 49m 32s.xml">
+    <history-entry file="ProductDAOImplTest - 2018.03.27 at 14h 49m 34s.xml">
       <configuration name="ProductDAOImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductDAOImplTest_canGetAProduct - 2018.03.20 at 15h 48m 42s.xml">
-      <configuration name="ProductDAOImplTest.canGetAProduct" configurationId="JUnit" />
+    <history-entry file="ProductDAOImplTest_canGetInventory - 2018.03.27 at 15h 44m 02s.xml">
+      <configuration name="ProductDAOImplTest.canGetInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProductDAOImplTest_canGetAProduct - 2018.03.20 at 15h 48m 43s.xml">
-      <configuration name="ProductDAOImplTest.canGetAProduct" configurationId="JUnit" />
+    <history-entry file="ProductDAOImplTest_canGetProductCost - 2018.03.27 at 14h 46m 13s.xml">
+      <configuration name="ProductDAOImplTest.canGetProductCost" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductDAOImplTest_setInventory - 2018.03.27 at 15h 47m 48s.xml">
+      <configuration name="ProductDAOImplTest.setInventory" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -514,13 +570,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31823203" sideWeight="0.37916666" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42983425" sideWeight="0.37916666" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61878455" sideWeight="0.234375" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0839779" sideWeight="0.765625" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14143646" sideWeight="0.765625" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -545,7 +601,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java</url>
+          <line>16</line>
+          <properties class="main.com.VendingMachine.ProductDAOImpl" method="getProductInventory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -576,8 +642,13 @@
         <state relative-caret-position="147">
           <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -602,6 +673,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,8 +748,13 @@
         <state relative-caret-position="84">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -693,6 +779,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -700,6 +787,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -708,8 +805,13 @@
         <state relative-caret-position="84">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -718,7 +820,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -743,7 +852,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -761,6 +877,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -768,6 +885,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -776,8 +903,13 @@
         <state relative-caret-position="189">
           <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,20 +941,6 @@
         <state relative-caret-position="126">
           <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -858,14 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ConsoleIO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -877,53 +987,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state relative-caret-position="189">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-          <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="168">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state relative-caret-position="420">
+          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+        <state relative-caret-position="387">
+          <caret line="193" column="29" lean-forward="true" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding />
         </state>
       </provider>

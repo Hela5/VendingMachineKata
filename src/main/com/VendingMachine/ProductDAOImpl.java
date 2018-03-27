@@ -3,51 +3,24 @@ package main.com.VendingMachine;
 
 public class ProductDAOImpl implements ProductDAO {
 
-
     @Override
     public Product[] getProductTypes() {
         return Product.values();
     }
 
     @Override
-    public double getProductCost(Product productType) {
-        double productCost;
-        switch (productType){
-            case CANDY:
-                productCost = .65;
-                break;
-            case COLA:
-                productCost = 1.00;
-                break;
-            case CHIPS:
-                productCost = .50;
-                break;
-            default:
-                productCost = 0;
-                break;
-        }
-        return productCost;
+    public double getProductCost() {
+        return this.getProductCost();
     }
 
     @Override
     public int getProductInventory(Product productType) {
-        int currentInventory;
-        switch (productType){
-            case CHIPS:
-                currentInventory = 10;
-                break;
-            case COLA:
-                currentInventory = 10;
-                break;
-            case CANDY:
-                currentInventory = 10;
-                break;
-                default:
-                    currentInventory = 0;
-                    break;
-        }
-        return currentInventory;
+       return this.getProductInventory(productType);
+    }
 
+    @Override
+    public void setProductInventory(int productInventory) {
+        this.setProductInventory(productInventory);
     }
 
 }

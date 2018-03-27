@@ -11,22 +11,18 @@ public class CoinDAOImpl implements CoinDAO {
     }
 
     @Override
-    public double getCoinValue(Coin coinType) {
-        double coinValue;
-        switch (coinType){
-            case DIME:
-                coinValue = .10;
-                break;
-            case NICKEL:
-                coinValue = .05;
-                break;
-            case QUARTER:
-                coinValue = .25;
-                break;
-            default:
-                coinValue = 0;
-        }
-        return coinValue;
+    public double getCoinValue() {
+        return this.getCoinValue();
+    }
+
+    @Override
+    public int getCoinInventory(Coin cointype) {
+        return this.getCoinInventory(cointype);
+    }
+
+    @Override
+    public void setCoinInventory(int coinInv) {
+        this.setCoinInventory(coinInv);
     }
 }
 
