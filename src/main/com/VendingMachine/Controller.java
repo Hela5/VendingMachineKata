@@ -79,7 +79,6 @@ public class Controller {
         boolean onceAgain = true;
          do {
             String resp = cons.queryUserString("\nPlease type your selected product!  ");
-            //resp.toUpperCase();
             switch (resp.toUpperCase()) {
                 case "CHIPS":
                     prodType = Product.CHIPS;
@@ -92,7 +91,7 @@ public class Controller {
                     cost = prodType.getProductCost();
                     totalCost = cost + totalCost;
                     numProdPurchased++;
-                    break;
+                     break;
                 case "CANDY":
                     prodType = Product.CANDY;
                     cost = prodType.getProductCost();
@@ -145,97 +144,110 @@ public class Controller {
     }
 
     public void selectPaymentMethod() {
+        int qCount = 0;
+        int dCount = 0;
+        int nCount = 0;
         boolean needMoreChange = false;
         boolean validCoin;
+        boolean suffCoin = true;
         String coinType;
         Coin coinRealName = null;
 
         cons.displayUserString("If you want your coins returned. Please say RETURN.");
 
         do {
-           do {
-               coinType = cons.queryUserString("\nWhich coin would you like to start adding in?");
-               switch (coinType.toUpperCase()) {
-                   case "QUARTER":
-                       coinRealName = Coin.QUARTER;
-                       validCoin = true;
-                       break;
-                   case "DIME":
-                       coinRealName = Coin.DIME;
-                       validCoin = true;
-                       break;
-                   case "NICKEL":
-                       coinRealName = Coin.NICKEL;
-                       validCoin = true;
-                       break;
-                   case "RETURN":
-                       cons.displayUserString("We are sorry to hear that. All coins are being returned. ");
-                       indivInput = 0;
-                       validCoin = false;
-                       break;
-                   default:
-                       validCoin = false;
-               }
+            do {
+                coinType = cons.queryUserString("\nWhich coin would you like to start adding in?");
+                switch (coinType.toUpperCase()) {
+                    case "QUARTER":
+                        coinRealName = Coin.QUARTER;
+                        validCoin = true;
+                        break;
+                    case "DIME":
+                        coinRealName = Coin.DIME;
+                        validCoin = true;
+                        break;
+                    case "NICKEL":
+                        coinRealName = Coin.NICKEL;
+                        validCoin = true;
+                        break;
+                    case "RETURN":
+                        cons.displayUserString("We are sorry to hear that. All coins are being returned. ");
+                        indivInput = 0;
+                        validCoin = false;
+                        break;
+                    default:
+                        validCoin = false;
+                }
 
-               if(!validCoin) {
-                   cons.displayUserString("Sorry, we can't accept that. Please try again!");
-                   validCoin = false;
-               }
+                if (!validCoin) {
+                    cons.displayUserString("Sorry, we can't accept that. Please try again!");
+                    validCoin = false;
+                }
 
-           } while (!validCoin);
+            } while (!validCoin);
 
             indivInput = coinRealName.getCoinValue();
-
-            int numOfCoinType = cons.queryUserInt("How many coins would you like to put in?");
-            if (acceptableRangeForCoins(numOfCoinType)) {
-                cons.displayUserString("We are returning your coins.");
-                numOfCoinType = 0;
-            }
-            boolean suffCoin;
-            if (numOfCoinType > 0) {
-                suffCoin = checkCoinInventory(coinRealName);
-            }
+            suffCoin = checkCoinInventory(coinRealName);
             if (suffCoin) {
-            double thisInput = indivInput * numOfCoinType;
-            totalInput = thisInput + totalInput;
 
-            cons.displayUserString("You inserted " + numOfCoinType + "  " + coinRealName + "S ... a total of : $" + df.format(thisInput));
-            cons.displayUserString("Input total is : $" + df.format(totalInput) + "\nYour total cost is : $" + df.format(totalCost));
+                int numOfCoinType = cons.queryUserInt("How many coins would you like to put in?");
+                if (acceptableRangeForCoins(numOfCoinType)) {
+                    cons.displayUserString("We are returning your coins.");
+                    numOfCoinType = 0;
+                }
 
-            if (totalInput < totalCost) {
-                cons.displayUserString("We need more change!");
-                needMoreChange = true;
-            } else if (totalInput > totalCost) {
-                cons.displayUserString("Great! Generating your change. ");
-                needMoreChange = false;
-                makeChange();
-                totalCost = 0;
-                totalInput = 0;
-            } else if (totalCost == totalInput) {
-                needMoreChange = false;
-                totalCost = 0;
-                totalInput = 0;
-            }} else {
-                cons.displayUserString("EXACT CHANGE ONLY");
+                switch (coinRealName){
+                    case QUARTER:
+                        qCount = numOfCoinType;
+                        break;
+                    case NICKEL:
+                        nCount = numOfCoinType;
+                        break;
+                    case DIME:
+                        dCount = numOfCoinType;
+                        break;
+                }
+                double thisInput = indivInput * numOfCoinType;
+                totalInput = thisInput + totalInput;
+
+                cons.displayUserString("You inserted " + numOfCoinType + "  " + coinRealName + "S ... a total of : $" + df.format(thisInput));
+                cons.displayUserString("Input total is : $" + df.format(totalInput) + "\nYour total cost is : $" + df.format(totalCost));
+
+                if (totalInput < totalCost) {
+                    cons.displayUserString("We need more change!");
+                    needMoreChange = true;
+                } else if (totalInput > totalCost) {
+                    cons.displayUserString("Great! Generating your change. ");
+                    needMoreChange = false;
+                    makeChange(qCount, dCount, nCount);
+                    totalCost = 0;
+                    totalInput = 0;
+                } else if (totalCost == totalInput) {
+                    needMoreChange = false;
+                    totalCost = 0;
+                    totalInput = 0;
+                }
+            } else {
+                cons.displayUserString("Please enter in EXACT CHANGE ONLY");
                 needMoreChange = true;
             }
-
-        }
-        while (needMoreChange) ;
+        }while (needMoreChange) ;
     }
 
-        public void makeChange(){
+        public void makeChange(int qCount, int dCount, int nCount){
             double remainder = totalInput - totalCost;
             remainder = remainder * 100;
                 cons.displayUserString("You get $" + df.format(remainder / 100));
-                double numQuarters = remainder / 25;
+                double numQrtrsRtrnd = remainder / 25;
 
                 remainder = remainder % 25;
-                double numDimes = remainder / 10;
+                double numDmsRtrnd = remainder / 10;
                 remainder = remainder % 10;
-                double numNickels = remainder / 5;
+                double numNklsRtrnd = remainder / 5;
                 DecimalFormat intStyle = new DecimalFormat("#0");
-                cons.displayUserString( intStyle.format(numQuarters) + " Quarters back\n" + intStyle.format(numDimes) + " Dimes back \n" + intStyle.format(numNickels) + " Nickels back");
+                cons.displayUserString( intStyle.format(numQrtrsRtrnd) + " Quarters back\n" + intStyle.format(numDmsRtrnd) + " Dimes back \n" + intStyle.format(numNklsRtrnd) + " Nickels back");
+            resetCoinInv(qCount, dCount, nCount, ((int) numQrtrsRtrnd), ((int) numDmsRtrnd), ((int) numNklsRtrnd));
     }
 
         public boolean acceptableRangeForCoins(int coinsIn){
@@ -255,7 +267,6 @@ public class Controller {
         }
              resetInv = initialInv - 1;
              prodT.setProductInventory(resetInv);
-             cons.displayUserString("Reset Inventory : " + prodT.getProductInventory());
              return sufficientProd;
         }
 
@@ -265,10 +276,25 @@ public class Controller {
           if(initialCoins <= 4){
               sufficientCoin = false;
           }
-          resetInv = initialCoins - 1;
-          coinT.setCoinInventory(resetInv);
-          cons.displayUserString("ResetInventory : " +coinT.getCoinInventory());
           return sufficientCoin;
+        }
+
+        public void resetCoinInv(int numQGiven, int numDGiven, int numNGiven, int numQRtrn, int numDRtrn, int numNRtrn){
+            int qReset;
+            int dReset;
+            int nReset;
+            int qInitialInv = Coin.QUARTER.getCoinInventory();
+            int nInitialInv = Coin.NICKEL.getCoinInventory();
+            int dInitialInv = Coin.DIME.getCoinInventory();
+
+            qReset = qInitialInv + numQGiven - numQRtrn;
+            Coin.QUARTER.setCoinInventory(qReset);
+
+            dReset = dInitialInv + numDGiven - numDRtrn;
+            Coin.DIME.setCoinInventory(dReset);
+
+            nReset = nInitialInv + numNGiven - numNRtrn;
+            Coin.NICKEL.setCoinInventory(nReset);
         }
 
     }

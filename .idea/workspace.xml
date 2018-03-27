@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69107a24-3edd-4a19-b6f1-c0fd0348f812" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java" afterPath="$PROJECT_DIR$/Test/VendingMachine/CoinDAOImplTest.java" />
-      <change beforePath="$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java" afterPath="$PROJECT_DIR$/Test/VendingMachine/ProductDAOImplTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/Coin.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/CoinDAOImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/Product.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/Product.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/com/VendingMachine/ProductDAOImpl.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +19,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="193" column="29" lean-forward="true" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
+            <state relative-caret-position="5880">
+              <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -576,7 +568,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61878455" sideWeight="0.234375" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14143646" sideWeight="0.765625" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.059668507" sideWeight="0.765625" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1084,8 +1076,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/VendingMachine/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="193" column="29" lean-forward="true" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
+        <state relative-caret-position="5880">
+          <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding />
         </state>
       </provider>
