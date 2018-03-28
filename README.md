@@ -10,4 +10,4 @@ The best way to start it will be to:
 Please make sure you're typing into the console when responding.
 I appreciate you taking the time to look through this app.
 
-Happy Purchasing!
+Thank you, come again!!
