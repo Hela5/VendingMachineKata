@@ -41,6 +41,7 @@ public class Controller {
                     methodsOfPayment();
                     selectPaymentMethod();
                     cons.displayUserString("\nThanks for shopping with us today!");
+                    numProdPurchased = 0;
                     break;
                 case 3:
                     cons.displayUserString("Thanks for stopping by! ");
@@ -130,7 +131,7 @@ public class Controller {
             if (currentProd.getProductInventory() > 0) {
                 cons.displayUserString("\t" + currentProd.toString() + "   is available");
             } else if (currentProd.getProductInventory() <= 0) {
-                cons.displayUserString("\t" + currentProd.toString() + "is currently unavailable. Sorry!");
+                cons.displayUserString("\t" + currentProd.toString() + " is currently unavailable. Sorry!");
             }
         }
     }
