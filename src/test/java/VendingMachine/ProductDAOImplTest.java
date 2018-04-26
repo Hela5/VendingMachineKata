@@ -1,13 +1,11 @@
 package VendingMachine;
 
-import main.com.VendingMachine.Product;
-import main.com.VendingMachine.ProductDAO;
-import main.com.VendingMachine.ProductDAOImpl;
+import com.VendingMachine.Product;
+import com.VendingMachine.ProductDAOImpl;
 import org.junit.jupiter.api.Test;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class ProductDAOImplTest {

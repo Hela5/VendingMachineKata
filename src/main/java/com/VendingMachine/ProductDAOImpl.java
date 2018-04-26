@@ -1,4 +1,4 @@
-package main.com.VendingMachine;
+package com.VendingMachine;
 
 
 public class ProductDAOImpl implements ProductDAO {

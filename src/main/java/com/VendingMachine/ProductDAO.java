@@ -1,4 +1,4 @@
-package main.com.VendingMachine;
+package com.VendingMachine;
 
 import java.util.ArrayList;
 

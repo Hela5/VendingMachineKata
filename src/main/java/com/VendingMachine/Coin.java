@@ -1,4 +1,4 @@
-package main.com.VendingMachine;
+package com.VendingMachine;
 
 public enum Coin {
 

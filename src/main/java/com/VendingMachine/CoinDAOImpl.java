@@ -1,6 +1,5 @@
-package main.com.VendingMachine;
+package com.VendingMachine;
 
-import main.com.VendingMachine.Coin;
 import java.util.ArrayList;
 
 public class CoinDAOImpl implements CoinDAO {
