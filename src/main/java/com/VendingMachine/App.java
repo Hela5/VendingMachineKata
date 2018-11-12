@@ -1,12 +1,15 @@
 package com.VendingMachine;
-import com.VendingMachine.ProductDAOImpl;
+import java.text.DecimalFormat;
 
 public class App {
 
     public static void main(String[] args){
         ProductDAOImpl prodDAO = new ProductDAOImpl();
+        CoinDAOImpl coinDAO = new CoinDAOImpl();
+        DecimalFormat df = new DecimalFormat();
+        ConsoleIO cons = new ConsoleIO();
 
-        Controller controller = new Controller(prodDAO);
+        Controller controller = new Controller(cons, coinDAO, prodDAO, df );
         controller.run();
     }
 

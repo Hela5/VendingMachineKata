@@ -33,6 +33,7 @@ public class Controller {
         this.decimalFormat = decimalFormat;
     }
 
+
     public void run() {
         displayMenu();
 
@@ -157,7 +158,7 @@ public class Controller {
         console.displayUserString("\n  ");
     }
 
-    public void selectPaymentMethod() {
+    private void selectPaymentMethod() {
         console.displayUserString("If you want your coins returned. Please say RETURN.");
         do {
             setCustomerCoinSelection();
@@ -177,9 +178,9 @@ public class Controller {
         }while (needMoreChange);
     }
 
-        public void makeChange(int qCount, int dCount, int nCount){
-            double remainder = totalInput - totalCost;
-            remainder = remainder * 100;
+    private void makeChange(int qCount, int dCount, int nCount){
+        double remainder = totalInput - totalCost;
+           remainder = remainder * 100;
                 console.displayUserString("You get $" + decimalFormat.format(remainder / 100));
                 double numQrtrsReturned = remainder / 25;
 
@@ -192,7 +193,7 @@ public class Controller {
             resetCoinInv(qCount, dCount, nCount, ((int) numQrtrsReturned), ((int) numDimesReturned), ((int) numNickelsReturned));
     }
 
-        public boolean acceptableRangeForCoins(int coinsIn){
+    private boolean acceptableRangeForCoins(int coinsIn){
         boolean tooMany = false;
         if (coinsIn < 1 || coinsIn > 10){
             console.displayUserString("Please lower your input to less than 10.");
@@ -201,109 +202,113 @@ public class Controller {
         return tooMany;
         }
 
-        public boolean checkProdInventory(Product prodT) {
-            boolean sufficientProd = true;
-            int initialInv = prodT.getProductInventory();
-            if (initialInv <= 0) {
-                sufficientProd = false;
+     private boolean checkProdInventory(Product prodT) {
+        boolean sufficientProd = true;
+        int initialInv = prodT.getProductInventory();
+        if (initialInv <= 0) {
+            sufficientProd = false;
         }
-            resetInventory = initialInv - 1;
-             prodT.setProductInventory(resetInventory);
-             return sufficientProd;
+        resetInventory = initialInv - 1;
+        prodT.setProductInventory(resetInventory);
+        return sufficientProd;
         }
 
-        public boolean checkCoinInventory(Coin coinT){
-          boolean sufficientCoin = true;
-          int initialCoins = coinT.getCoinInventory();
-          if(initialCoins <= 4){
-              sufficientCoin = false;
+     private boolean checkCoinInventory(Coin coinT){
+        boolean sufficientCoin = true;
+        int initialCoins = coinT.getCoinInventory();
+        if(initialCoins <= 4){
+           sufficientCoin = false;
           }
-          return sufficientCoin;
+        return sufficientCoin;
         }
 
-        public void resetCoinInv(int numQGiven, int numDGiven, int numNGiven, int numQRtrn, int numDRtrn, int numNRtrn){
-            int quarterReset;
-            int dimeReset;
-            int nickelReset;
-            int qInitialInv = Coin.QUARTER.getCoinInventory();
-            int nInitialInv = Coin.NICKEL.getCoinInventory();
-            int dInitialInv = Coin.DIME.getCoinInventory();
+     private void resetCoinInv(int numQGiven, int numDGiven, int numNGiven, int numQRtrn, int numDRtrn, int numNRtrn){
+        int quarterReset;
+        int dimeReset;
+        int nickelReset;
+        int qInitialInv = Coin.QUARTER.getCoinInventory();
+        int nInitialInv = Coin.NICKEL.getCoinInventory();
+        int dInitialInv = Coin.DIME.getCoinInventory();
+        quarterReset = qInitialInv + numQGiven - numQRtrn;
+        Coin.QUARTER.setCoinInventory(quarterReset);
 
-            quarterReset = qInitialInv + numQGiven - numQRtrn;
-            Coin.QUARTER.setCoinInventory(quarterReset);
+        dimeReset = dInitialInv + numDGiven - numDRtrn;
+        Coin.DIME.setCoinInventory(dimeReset);
 
-            dimeReset = dInitialInv + numDGiven - numDRtrn;
-            Coin.DIME.setCoinInventory(dimeReset);
-
-            nickelReset = nInitialInv + numNGiven - numNRtrn;
-            Coin.NICKEL.setCoinInventory(nickelReset);
+        nickelReset = nInitialInv + numNGiven - numNRtrn;
+        Coin.NICKEL.setCoinInventory(nickelReset);
         }
 
 
-        public void setCustomerCoinSelection() {
-            do {
-            coinType = console.queryUserString("\nWhich coin would you like to start adding in?");
-            switch (coinType.toUpperCase()) {
-                case "QUARTER":
-                    coinRealName = Coin.QUARTER;
-                    validCoin = true;
-                    break;
-                case "DIME":
-                    coinRealName = Coin.DIME;
-                    validCoin = true;
-                    break;
-                case "NICKEL":
-                    coinRealName = Coin.NICKEL;
-                    validCoin = true;
-                    break;
-                case "RETURN":
-                    console.displayUserString("We are sorry to hear that. All coins are being returned. ");
-                    indivInput = 0;
-                    validCoin = false;
-                    break;
-                default:
-                    validCoin = false;
+     private void setCustomerCoinSelection() {
+        do {
+           coinType = console.queryUserString("\nWhich coin would you like to start adding in?");
+           switch (coinType.toUpperCase()) {
+             case "QUARTER":
+                 coinRealName = Coin.QUARTER;
+                 validCoin = true;
+                 break;
+             case "DIME":
+                 coinRealName = Coin.DIME;
+                 validCoin = true;
+                 break;
+            case "NICKEL":
+                 coinRealName = Coin.NICKEL;
+                 validCoin = true;
+                 break;
+            case "RETURN":
+                 console.displayUserString("We are sorry to hear that. All coins are being returned. ");
+                 indivInput = 0;
+                 validCoin = false;
+                 break;
+            default:
+                 validCoin = false;
             }
 
-            if (!validCoin) {
-                console.displayUserString("Sorry, we can't accept that. Please try again!");
-                validCoin = false;
-            }
-            }while(!validCoin);
+         if (!validCoin) {
+             console.displayUserString("Sorry, we can't accept that. Please try again!");
+             validCoin = false;
+          }
+         }while(!validCoin);
         }
 
-        public void determinePaymentTotal(double customerInput, Coin coinToUse, int numOfCoinsSelected) {
-            switch (coinToUse){
-                case QUARTER:
-                    quarterCount = numOfCoinsSelected;
-                    break;
-                case NICKEL:
-                    nickelCount = numOfCoinsSelected;
-                    break;
-                case DIME:
-                    dimeCount = numOfCoinsSelected;
-                    break;
-            }
-            double thisInput = customerInput * numOfCoinsSelected;
-            totalInput = thisInput + totalInput;
+     private void determinePaymentTotal(double customerInput, Coin coinToUse, int numOfCoinsSelected) {
+         switch (coinToUse) {
+             case QUARTER:
+                 quarterCount = numOfCoinsSelected;
+                 break;
+             case NICKEL:
+                 nickelCount = numOfCoinsSelected;
+                 break;
+             case DIME:
+                 dimeCount = numOfCoinsSelected;
+                 break;
+         }
+         double thisInput = customerInput * numOfCoinsSelected;
+         totalInput = thisInput + totalInput;
 
-            console.displayUserString("You inserted " + numOfCoinsSelected + "  " + coinToUse + "S ... a total of : $" + decimalFormat.format(thisInput));
-            console.displayUserString("Input total is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(totalCost));
+         console.displayUserString("You inserted " + numOfCoinsSelected + "  " + coinToUse + "S ... a total of : $" + decimalFormat.format(thisInput));
+         console.displayUserString("Input total is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(totalCost));
+         totalInput = checkForChange(totalInput);
+     }
 
-            if (totalInput < totalCost) {
-                console.displayUserString("We need more change!");
-                needMoreChange = true;
-            } else if (totalInput > totalCost) {
-                console.displayUserString("Great! Generating your change. ");
-                needMoreChange = false;
-                makeChange(quarterCount, dimeCount, nickelCount);
-                totalCost = 0;
-                totalInput = 0;
-            } else if (totalCost == totalInput) {
-                needMoreChange = false;
-                totalCost = 0;
-                totalInput = 0;
-            }
+     private double checkForChange(double totalInput) {
+        double returnTotalInput = 0;
+        if (totalInput < totalCost) {
+             console.displayUserString("We need more change!");
+             needMoreChange = true;
+         } else if (totalInput > totalCost) {
+             console.displayUserString("Great! Generating your change. ");
+             needMoreChange = false;
+             makeChange(quarterCount, dimeCount, nickelCount);
+             totalCost = 0;
+            returnTotalInput= 0;
+         } else if (totalCost == totalInput) {
+             needMoreChange = false;
+             totalCost = 0;
+            returnTotalInput = 0;
         }
+        return returnTotalInput;
+       }
     }
 
