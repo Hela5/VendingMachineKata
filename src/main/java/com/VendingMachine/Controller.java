@@ -54,7 +54,7 @@ public class Controller {
                     console.displayUserString("\n ------ We accept these methods of payment ------ \n");
                     methodsOfPayment();
                     selectPaymentMethod();
-                    console.displayUserString("\nThanks for shopping with us today!");
+                    console.displayUserString("\nThanks for shopping with us today!\n");
                     numProdPurchased = 0;
                     break;
                 case 3:
@@ -92,7 +92,7 @@ public class Controller {
     private void purchaseAProduct() {
         boolean sufficientProduct;
         boolean onceAgain = true;
-         do {
+        do {
             String resp = console.queryUserString("\nPlease type your selected product!  ");
             switch (resp.toUpperCase()) {
                 case "CHIPS":
@@ -106,7 +106,7 @@ public class Controller {
                     cost = productType.getProductCost();
                     totalCost = cost + totalCost;
                     numProdPurchased++;
-                     break;
+                    break;
                 case "CANDY":
                     productType = Product.CANDY;
                     cost = productType.getProductCost();
@@ -116,20 +116,29 @@ public class Controller {
                 default:
                     console.displayUserString("I'm sorry, that seems to be an invalid option. Please try and type it again.");
             }
-            sufficientProduct = checkProdInventory(productType);
-            if (sufficientProduct) {
-            console.displayUserString("Your current total is: " + "$ " + totalCost + "\nTotal Items To Purchase " + numProdPurchased);
-            String keepGoing = console.queryUserString("Would you like anything else today? Y or N ");
-            if (keepGoing.equalsIgnoreCase("Y")) {
-                onceAgain = true;
-            } else if (keepGoing.equalsIgnoreCase("N")) {
-                onceAgain = false;
-            }}
-            else {
-                console.displayUserString("Product selected is SOLD OUT. Please select something else today.");
-                onceAgain = true;
-            }
+             sufficientProduct = checkProdInventory(productType);
+             console.displayUserString("about to look through respondwithProdinventory");
+             onceAgain = respondWithProdInventoryAndIterate(sufficientProduct, totalCost, numProdPurchased);
+             console.displayUserString(onceAgain + " = onceAgain");
+
         } while (onceAgain);
+
+    }
+    private boolean respondWithProdInventoryAndIterate(boolean enoughProduct, double totalCost, int numProdPurchased){
+        boolean continueOn = true;
+        if (enoughProduct) {
+           console.displayUserString("Your current total is: " + "$ " + totalCost + "\nTotal Items To Purchase " + numProdPurchased);
+           String keepGoing = console.queryUserString("Would you like anything else today? Y or N ");
+          if (keepGoing.equalsIgnoreCase("Y")) {
+            continueOn = true;
+          } else if (keepGoing.equalsIgnoreCase("N")) {
+            continueOn = false;
+        }}
+        else {
+          console.displayUserString("Product selected is SOLD OUT. \nPlease select something else today.");
+          continueOn = true;
+        }
+     return continueOn;
     }
 
     private void displayAllProducts() {
@@ -159,7 +168,7 @@ public class Controller {
     }
 
     private void selectPaymentMethod() {
-        console.displayUserString("If you want your coins returned. Please say RETURN.");
+        console.displayUserString("\nIf at any point you want your coins returned. Please say RETURN.");
         do {
             setCustomerCoinSelection();
             indivInput = coinRealName.getCoinValue();
@@ -172,7 +181,7 @@ public class Controller {
                 }
                determinePaymentTotal(indivInput, coinRealName, numOfCoinType);
             } else {
-                console.displayUserString("Please enter in EXACT CHANGE ONLY");
+                console.displayUserString("Currently experiencing low coin volume. Please enter in EXACT CHANGE ONLY");
                 needMoreChange = true;
             }
         }while (needMoreChange);
@@ -287,14 +296,11 @@ public class Controller {
          double thisInput = customerInput * numOfCoinsSelected;
          totalInput = thisInput + totalInput;
 
-         console.displayUserString("You inserted " + numOfCoinsSelected + "  " + coinToUse + "S ... a total of : $" + decimalFormat.format(thisInput));
-         console.displayUserString("Input total is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(totalCost));
-         totalInput = checkForChange(totalInput);
-     }
+         console.displayUserString("You inserted " + numOfCoinsSelected + "  " + coinToUse + "S ... for a total of : $" + decimalFormat.format(thisInput));
+         console.displayUserString("Total Customer Input is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(totalCost));
 
-     private double checkForChange(double totalInput) {
-        double returnTotalInput = 0;
-        if (totalInput < totalCost) {
+
+         if (totalInput < totalCost) {
              console.displayUserString("We need more change!");
              needMoreChange = true;
          } else if (totalInput > totalCost) {
@@ -302,13 +308,13 @@ public class Controller {
              needMoreChange = false;
              makeChange(quarterCount, dimeCount, nickelCount);
              totalCost = 0;
-            returnTotalInput= 0;
+            //returnTotalInput= 0;
          } else if (totalCost == totalInput) {
              needMoreChange = false;
              totalCost = 0;
-            returnTotalInput = 0;
+            //returnTotalInput = 0;
         }
-        return returnTotalInput;
+        //return returnTotalInput;
        }
     }
 
