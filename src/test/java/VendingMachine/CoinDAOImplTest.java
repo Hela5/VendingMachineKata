@@ -3,12 +3,13 @@ package VendingMachine;
 import com.VendingMachine.Coin;
 import com.VendingMachine.CoinDAOImpl;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.MockitoFramework.*;
 
 public class CoinDAOImplTest {
-
 
         @Test
         public void getListOfValidCoins(){

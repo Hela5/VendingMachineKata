@@ -89,7 +89,7 @@ public class Controller {
 
     }
 
-    private void purchaseAProduct() {
+    public void purchaseAProduct() {
         boolean sufficientProduct;
         boolean onceAgain = true;
         do {
@@ -117,14 +117,11 @@ public class Controller {
                     console.displayUserString("I'm sorry, that seems to be an invalid option. Please try and type it again.");
             }
              sufficientProduct = checkProdInventory(productType);
-             console.displayUserString("about to look through respondwithProdinventory");
              onceAgain = respondWithProdInventoryAndIterate(sufficientProduct, totalCost, numProdPurchased);
-             console.displayUserString(onceAgain + " = onceAgain");
-
         } while (onceAgain);
 
     }
-    private boolean respondWithProdInventoryAndIterate(boolean enoughProduct, double totalCost, int numProdPurchased){
+    public boolean respondWithProdInventoryAndIterate(boolean enoughProduct, double totalCost, int numProdPurchased){
         boolean continueOn = true;
         if (enoughProduct) {
            console.displayUserString("Your current total is: " + "$ " + totalCost + "\nTotal Items To Purchase " + numProdPurchased);
@@ -141,14 +138,14 @@ public class Controller {
      return continueOn;
     }
 
-    private void displayAllProducts() {
+    public void displayAllProducts() {
         Product[] prodsAvail = productDAO.getProductTypes();
         for (Product currentProd : prodsAvail) {
             console.displayUserString( "\t" + currentProd.toString() + " --  COST : $ " + currentProd.getProductCost());
         }
     }
 
-    private void displayProductAvailability() {
+    public void displayProductAvailability() {
         Product[] prods = productDAO.getProductTypes();
         for (Product currentProd : prods) {
             if (currentProd.getProductInventory() > 0) {
@@ -159,7 +156,7 @@ public class Controller {
         }
     }
 
-    private void methodsOfPayment() {
+    public void methodsOfPayment() {
         Coin[] coins = coinDAO.getCoinTypes();
         for (Coin currentCoin : coins) {
             console.displayUserString("\t" + currentCoin.toString());
@@ -167,7 +164,7 @@ public class Controller {
         console.displayUserString("\n  ");
     }
 
-    private void selectPaymentMethod() {
+    public void selectPaymentMethod() {
         console.displayUserString("\nIf at any point you want your coins returned. Please say RETURN.");
         do {
             setCustomerCoinSelection();
@@ -187,7 +184,7 @@ public class Controller {
         }while (needMoreChange);
     }
 
-    private void makeChange(int qCount, int dCount, int nCount){
+    public void makeChange(int qCount, int dCount, int nCount){
         double remainder = totalInput - totalCost;
            remainder = remainder * 100;
                 console.displayUserString("You get $" + decimalFormat.format(remainder / 100));
@@ -202,7 +199,7 @@ public class Controller {
             resetCoinInv(qCount, dCount, nCount, ((int) numQrtrsReturned), ((int) numDimesReturned), ((int) numNickelsReturned));
     }
 
-    private boolean acceptableRangeForCoins(int coinsIn){
+    public boolean acceptableRangeForCoins(int coinsIn){
         boolean tooMany = false;
         if (coinsIn < 1 || coinsIn > 10){
             console.displayUserString("Please lower your input to less than 10.");
@@ -211,7 +208,7 @@ public class Controller {
         return tooMany;
         }
 
-     private boolean checkProdInventory(Product prodT) {
+     public boolean checkProdInventory(Product prodT) {
         boolean sufficientProd = true;
         int initialInv = prodT.getProductInventory();
         if (initialInv <= 0) {
@@ -222,7 +219,7 @@ public class Controller {
         return sufficientProd;
         }
 
-     private boolean checkCoinInventory(Coin coinT){
+     public boolean checkCoinInventory(Coin coinT){
         boolean sufficientCoin = true;
         int initialCoins = coinT.getCoinInventory();
         if(initialCoins <= 4){
@@ -231,7 +228,7 @@ public class Controller {
         return sufficientCoin;
         }
 
-     private void resetCoinInv(int numQGiven, int numDGiven, int numNGiven, int numQRtrn, int numDRtrn, int numNRtrn){
+     public void resetCoinInv(int numQGiven, int numDGiven, int numNGiven, int numQRtrn, int numDRtrn, int numNRtrn){
         int quarterReset;
         int dimeReset;
         int nickelReset;
@@ -249,7 +246,7 @@ public class Controller {
         }
 
 
-     private void setCustomerCoinSelection() {
+     public void setCustomerCoinSelection() {
         do {
            coinType = console.queryUserString("\nWhich coin would you like to start adding in?");
            switch (coinType.toUpperCase()) {
@@ -281,7 +278,7 @@ public class Controller {
          }while(!validCoin);
         }
 
-     private void determinePaymentTotal(double customerInput, Coin coinToUse, int numOfCoinsSelected) {
+     public void determinePaymentTotal(double customerInput, Coin coinToUse, int numOfCoinsSelected) {
          switch (coinToUse) {
              case QUARTER:
                  quarterCount = numOfCoinsSelected;
@@ -308,13 +305,10 @@ public class Controller {
              needMoreChange = false;
              makeChange(quarterCount, dimeCount, nickelCount);
              totalCost = 0;
-            //returnTotalInput= 0;
          } else if (totalCost == totalInput) {
              needMoreChange = false;
              totalCost = 0;
-            //returnTotalInput = 0;
         }
-        //return returnTotalInput;
        }
     }
 
