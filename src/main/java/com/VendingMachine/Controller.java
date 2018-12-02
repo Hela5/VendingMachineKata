@@ -1,4 +1,6 @@
 package com.VendingMachine;
+import org.junit.jupiter.api.Test;
+
 import java.text.DecimalFormat;
 
 public class Controller {
@@ -10,7 +12,7 @@ public class Controller {
 
     boolean keepRunning = true;
     double cost;
-    double totalCost;
+    double currentTotalCost;
     double indivInput;
     double totalInput;
     Product productType;
@@ -98,29 +100,29 @@ public class Controller {
                 case "CHIPS":
                     productType = Product.CHIPS;
                     cost = productType.getProductCost();
-                    totalCost = cost + totalCost;
+                    currentTotalCost = cost + currentTotalCost;
                     numProdPurchased++;
                     break;
                 case "COLA":
                     productType = Product.COLA;
                     cost = productType.getProductCost();
-                    totalCost = cost + totalCost;
+                    currentTotalCost = cost + currentTotalCost;
                     numProdPurchased++;
                     break;
                 case "CANDY":
                     productType = Product.CANDY;
                     cost = productType.getProductCost();
-                    totalCost = cost + totalCost;
+                    currentTotalCost = cost + currentTotalCost;
                     numProdPurchased++;
                     break;
                 default:
                     console.displayUserString("I'm sorry, that seems to be an invalid option. Please try and type it again.");
             }
              sufficientProduct = checkProdInventory(productType);
-             onceAgain = respondWithProdInventoryAndIterate(sufficientProduct, totalCost, numProdPurchased);
-        } while (onceAgain);
-
+             onceAgain = respondWithProdInventoryAndIterate(sufficientProduct, currentTotalCost, numProdPurchased);
+       } while (onceAgain);
     }
+
     public boolean respondWithProdInventoryAndIterate(boolean enoughProduct, double totalCost, int numProdPurchased){
         boolean continueOn = true;
         if (enoughProduct) {
@@ -185,7 +187,7 @@ public class Controller {
     }
 
     public void makeChange(int qCount, int dCount, int nCount){
-        double remainder = totalInput - totalCost;
+        double remainder = totalInput - currentTotalCost;
            remainder = remainder * 100;
                 console.displayUserString("You get $" + decimalFormat.format(remainder / 100));
                 double numQrtrsReturned = remainder / 25;
@@ -294,20 +296,20 @@ public class Controller {
          totalInput = thisInput + totalInput;
 
          console.displayUserString("You inserted " + numOfCoinsSelected + "  " + coinToUse + "S ... for a total of : $" + decimalFormat.format(thisInput));
-         console.displayUserString("Total Customer Input is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(totalCost));
+         console.displayUserString("Total Customer Input is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(currentTotalCost));
 
 
-         if (totalInput < totalCost) {
+         if (totalInput < currentTotalCost) {
              console.displayUserString("We need more change!");
              needMoreChange = true;
-         } else if (totalInput > totalCost) {
+         } else if (totalInput > currentTotalCost) {
              console.displayUserString("Great! Generating your change. ");
              needMoreChange = false;
              makeChange(quarterCount, dimeCount, nickelCount);
-             totalCost = 0;
-         } else if (totalCost == totalInput) {
+             currentTotalCost = 0;
+         } else if (currentTotalCost == totalInput) {
              needMoreChange = false;
-             totalCost = 0;
+             currentTotalCost = 0;
         }
        }
     }

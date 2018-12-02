@@ -9,7 +9,7 @@ public class App {
         DecimalFormat df = new DecimalFormat();
         ConsoleIO cons = new ConsoleIO();
 
-        Controller controller = new Controller(cons, coinDAO, prodDAO, df );
+        Controller controller = new Controller(cons, coinDAO, prodDAO, df);
         controller.run();
     }
 
