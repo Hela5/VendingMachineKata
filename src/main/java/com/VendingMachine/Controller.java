@@ -28,6 +28,7 @@ public class Controller {
     int nickelCount = 0;
     int numOfCoinType =0;
 
+
     public Controller(ConsoleIO console, CoinDAOImpl coinDAO, ProductDAOImpl productDAO, DecimalFormat decimalFormat) {
         this.console = console;
         this.coinDAO = coinDAO;
@@ -57,6 +58,7 @@ public class Controller {
                     methodsOfPayment();
                     selectPaymentMethod();
                     console.displayUserString("\nThanks for shopping with us today!\n");
+                    totalInput = 0;
                     numProdPurchased = 0;
                     break;
                 case 3:
@@ -188,17 +190,23 @@ public class Controller {
 
     public void makeChange(int qCount, int dCount, int nCount){
         double remainder = totalInput - currentTotalCost;
-           remainder = remainder * 100;
-                console.displayUserString("You get $" + decimalFormat.format(remainder / 100));
-                double numQrtrsReturned = remainder / 25;
+        console.displayUserString("You get $" + decimalFormat.format(remainder));
+        remainder = remainder * 100;
 
-                remainder = remainder % 25;
-                double numDimesReturned = remainder / 10;
-                remainder = remainder % 10;
-                double numNickelsReturned = remainder / 5;
-                DecimalFormat intStyle = new DecimalFormat("#0");
-                console.displayUserString( intStyle.format(numQrtrsReturned) + " Quarters back\n" + intStyle.format(numDimesReturned) + " Dimes back \n" + intStyle.format(numNickelsReturned) + " Nickels back");
-            resetCoinInv(qCount, dCount, nCount, ((int) numQrtrsReturned), ((int) numDimesReturned), ((int) numNickelsReturned));
+        double numDimesReturned = 0;
+        double numNickelsReturned = 0;
+        double numQrtrsReturned = 0;
+        double dimeMod = 0;
+
+        numQrtrsReturned = remainder/ 25;
+        remainder = remainder % 25;
+        numDimesReturned = remainder / 10;
+        dimeMod =remainder % 10;
+        remainder = remainder - dimeMod;
+        numNickelsReturned = remainder / 5;
+        decimalFormat.applyPattern("#0");
+        console.displayUserString( decimalFormat.format(numQrtrsReturned) + " Quarters back\n" + decimalFormat.format(numDimesReturned) + " Dimes back \n" + decimalFormat.format(numNickelsReturned) + " Nickels back");
+        resetCoinInv(qCount, dCount, nCount, ((int) numQrtrsReturned), ((int) numDimesReturned), ((int) numNickelsReturned));
     }
 
     public boolean acceptableRangeForCoins(int coinsIn){
