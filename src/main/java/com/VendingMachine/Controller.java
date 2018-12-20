@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 
 import java.text.DecimalFormat;
 
+import static jdk.nashorn.internal.objects.NativeMath.round;
+
 public class Controller {
 
     private ConsoleIO console;
@@ -128,7 +130,8 @@ public class Controller {
     public boolean respondWithProdInventoryAndIterate(boolean enoughProduct, double totalCost, int numProdPurchased){
         boolean continueOn = true;
         if (enoughProduct) {
-           console.displayUserString("Your current total is: " + "$ " + totalCost + "\nTotal Items To Purchase " + numProdPurchased);
+           decimalFormat.applyPattern("#0.00");
+           console.displayUserString("Your current total is: " + "$ " + decimalFormat.format(totalCost) + "\nTotal Items To Purchase " + numProdPurchased);
            String keepGoing = console.queryUserString("Would you like anything else today? Y or N ");
           if (keepGoing.equalsIgnoreCase("Y")) {
             continueOn = true;
@@ -145,7 +148,8 @@ public class Controller {
     public void displayAllProducts() {
         Product[] prodsAvail = productDAO.getProductTypes();
         for (Product currentProd : prodsAvail) {
-            console.displayUserString( "\t" + currentProd.toString() + " --  COST : $ " + currentProd.getProductCost());
+            decimalFormat.applyPattern("#0.00");
+            console.displayUserString( "\t" + currentProd.toString() + " --  COST : $ " + decimalFormat.format(currentProd.getProductCost()));
         }
     }
 
@@ -189,21 +193,20 @@ public class Controller {
     }
 
     public void makeChange(int qCount, int dCount, int nCount){
-        double remainder = totalInput - currentTotalCost;
+        double remainder = totalInput-currentTotalCost;
         console.displayUserString("You get $" + decimalFormat.format(remainder));
-        remainder = remainder * 100;
+        double numDimesReturned;
+        double numNickelsReturned;
+        double numQrtrsReturned;
 
-        double numDimesReturned = 0;
-        double numNickelsReturned = 0;
-        double numQrtrsReturned = 0;
-        double dimeMod = 0;
+        remainder = remainder*100;
+        remainder = Math.round(remainder);
 
-        numQrtrsReturned = remainder/ 25;
-        remainder = remainder % 25;
-        numDimesReturned = remainder / 10;
-        dimeMod =remainder % 10;
-        remainder = remainder - dimeMod;
-        numNickelsReturned = remainder / 5;
+        numQrtrsReturned = remainder/25;
+        remainder = remainder%25;
+        numDimesReturned = remainder/10;
+        remainder = remainder%10;
+        numNickelsReturned = remainder/5;
         decimalFormat.applyPattern("#0");
         console.displayUserString( decimalFormat.format(numQrtrsReturned) + " Quarters back\n" + decimalFormat.format(numDimesReturned) + " Dimes back \n" + decimalFormat.format(numNickelsReturned) + " Nickels back");
         resetCoinInv(qCount, dCount, nCount, ((int) numQrtrsReturned), ((int) numDimesReturned), ((int) numNickelsReturned));
@@ -302,7 +305,7 @@ public class Controller {
          }
          double thisInput = customerInput * numOfCoinsSelected;
          totalInput = thisInput + totalInput;
-
+         decimalFormat.applyPattern("#0.00");
          console.displayUserString("You inserted " + numOfCoinsSelected + "  " + coinToUse + "S ... for a total of : $" + decimalFormat.format(thisInput));
          console.displayUserString("Total Customer Input is : $" + decimalFormat.format(totalInput) + "\nYour total cost is : $" + decimalFormat.format(currentTotalCost));
 
